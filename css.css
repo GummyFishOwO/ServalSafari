@@ -1,0 +1,386 @@
+@charset "utf-8";
+
+@font-face {
+  font-family: safari;
+  src: url(UnlimitedPie.ttf );
+}
+
+@font-face {
+  font-family: reel;
+  src: url(Ura\ Bum\ Bum\ SP.ttf);
+}
+
+body {
+  font-family: reel;
+  font-size: 90%;
+  /*  background-image: url("ground.png"), url("mountains.png"), url("sky.png");
+  background-attachment: sticky, scroll, fixed;
+  background-position-x: center; */
+  overflow-x: hidden;
+  height: 100vh;
+  width: 100vw;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.nav_wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.nav {
+  position: fixed;
+  top: 10px;
+  min-width: 400px;
+  max-width: 600px;
+  align-content: center;
+  background-image: url(texture.png);
+  background-size: 10px;
+  background-repeat: repeat;
+  border-radius: 2em;
+  padding: 10px;
+  text-align: center;
+  border-style: groove;
+  border-color: rgb(94, 41, 11);
+}
+
+.button {
+  display: inline;
+  align-content: center;
+  background-image: url(texture.png);
+  background-size: 10px;
+  background-repeat: repeat;
+  border-radius: 2em;
+  border-color: rgb(74, 34, 11);
+  border-width: 2px;
+  border-style: groove;
+  padding-inline: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  color: rgb(220, 196, 167);
+  filter: brightness(115%);
+  text-decoration: none;
+  margin-inline: 5px;
+}
+
+.button:hover {
+  background-image: url(texture2.png);
+  border-color: rgb(255, 191, 72);
+  color: rgb(255, 178, 123);
+  border-width: 4px;
+}
+
+.container {
+  margin-top: 10%;
+  padding: 10%;
+  overflow: hidden;
+  margin-inline: 15%;
+  background-size: 100%;
+  max-height: 1000px;
+  min-height: 300px;
+  background-repeat: no-repeat;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background-image: url('footer.png');
+  background-repeat: repeat-x;
+  background-size: 800px;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  width: 750px;
+  margin: 0% auto;
+}
+
+.card-top {
+  background: url('board1.png') no-repeat bottom center;
+  background-size: 750px;
+  background-position: top center;
+  margin-top: 15%;
+  height: 70px;
+  flex-shrink: 0;
+}
+
+.card-middle {
+  background: url('board2.png') repeat-y center top;
+  background-size: 750px;
+  flex-grow: 1;
+  padding-inline: 12%;
+  position: relative;
+}
+
+.card-bottom {
+  background: url('board3.png') no-repeat top center;
+  background-size: 749px;
+  background-position: bottom center;
+  height: 90px;
+  flex-shrink: 0;
+}
+
+p {
+  background-color: rgb(250, 234, 212);
+  border-color: rgb(197, 139, 69);
+  border-width: 5px;
+  border-style: solid;
+  border-radius: 2em;
+  padding: 15px;
+  display: inline-block;
+  width: fit-content;
+  align-content: center;
+  overflow-wrap: anywhere;
+}
+
+h1 {
+  background-color: rgb(227, 212, 191);
+  border-color: rgb(197, 139, 69);
+  border-width: 5px;
+  border-style: solid;
+  border-radius: 2em;
+  padding: 15px;
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+  font-family: safari;
+  color: rgb(62, 26, 6);
+}
+
+.menu {
+  width: 100%;
+}
+
+.highlight {
+  display: block;
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background-size: 100%;
+  background-image: var(--imgback);
+  background-repeat: no-repeat;
+  transition-property: all;
+  transition-duration: 0.3s;
+
+}
+
+.highlight:hover {
+  transform: scale(105%);
+  background-image: var(--imgfront);
+}
+
+.highlight p {
+  visibility: hidden;
+}
+
+.highlight:hover>p {
+  visibility: visible;
+}
+
+@keyframes grow-progress {
+  from {
+    clip-path: rect(0px 500px 0px 0px);
+  }
+
+  to {
+    clip-path: rect(0px 500px 890px 0px);
+  }
+
+  100% {
+    clip-path: rect(0);
+  }
+}
+
+@keyframes appear {
+  from {
+    top: 900px;
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes appearcat {
+  from {
+    left: -400px;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.pathanim {
+  transform-origin: top;
+  animation: grow-progress linear;
+  animation-timeline: scroll();
+  pointer-events: none;
+}
+
+.appear {
+  animation: appear 2.5s forwards 400ms;
+  timeline-trigger: --trigger view() entry 100% exit 0%;
+  animation-trigger: --trigger play-forwards play-backwards;
+  transition-property: all;
+}
+
+.appearcat {
+  animation: appearcat 2.5s forwards;
+  timeline-trigger: --trigger view() entry 30% exit 0%;
+  animation-trigger: --trigger play-forwards play-backwards;
+  transition-property: all;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(10deg);
+  }
+
+  to {
+    transform: rotate(-10deg)
+  }
+}
+
+.rotate {
+  transition-property: all;
+  animation: rotate 2s alternate-reverse both infinite;
+  pointer-events: none;
+}
+
+.africa {
+  transition-property: all;
+  transition-duration: 0.3s;
+}
+
+.africa:hover {
+  transform: scale(108%);
+  filter: drop-shadow(0 0 1rem bisque)
+}
+
+button {
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.ent {
+  transition-property: all;
+  transition-duration: 0.3s;
+
+}
+
+.ent:hover {
+  transform: scale(110%);
+}
+
+.parallax {
+  height: 100vh;
+  width: 110vw;
+  background-image: var(--bg);
+  animation: var(--bganim) forwards;
+  animation-timeline: scroll();
+  pointer-events: none;
+  background-repeat: no-repeat;
+  transition-property: all;
+  transform-origin: bottom;
+}
+
+@keyframes mountain {
+  to {
+    top: -50px;
+  }
+}
+
+@keyframes ground {
+
+  to {
+    background-size: 100vw +530px;
+    top: 50px;
+  }
+
+}
+
+ul {
+  padding: 20px;
+  display: flex;
+  gap: 10em;
+  height: fit-content;
+  overflow-x: scroll;
+  overflow: hidden;
+  scroll-snap-type: x mandatory;
+  anchor-name: --carousel;
+  scroll-marker-group: after;
+  margin-top: 20%;
+
+}
+
+li {
+  list-style-type: none;
+  padding: 20px;
+  padding-left: 60px;
+  flex: 0 0 90%;
+  position: relative;
+  width: 4vw;
+}
+
+ul::scroll-marker-group {
+  position: absolute;
+  position-anchor: --carousel;
+  top: calc(anchor(bottom) - 43px);
+  justify-self: anchor-center;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+li::scroll-marker {
+  content: attr(data-accName);
+  width: 25px;
+  height: 25px;
+  background-color: transparent;
+  border: 2px solid rgb(80, 55, 7);
+  border-radius: 50%;
+  overflow: hidden;
+  text-indent: 16px;
+}
+
+li::scroll-marker:target-current {
+  background-color: rgb(202, 101, 24);
+}
+
+ul li p {
+  position: absolute;
+  width: 250px;
+}
+
+p[data-initial="timeline"] {
+  background-color: unset;
+  border-color: unset;
+  border-width: unset;
+  border-style: unset;
+  display: inline-block;
+  position: absolute;
+  padding: 0;
+  margin: -7px;
+}

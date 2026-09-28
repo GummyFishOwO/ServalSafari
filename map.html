@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang='ru'>
+
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Map</title>
+    <link rel='stylesheet' href='css.css'>
+</head>
+
+<body style="height: 1000px;">
+    <div class="parallax"
+        style=" --bg: url('sky.png');position:fixed; top:0; left:0; background-size:100vw; height: 100vh; z-index: -2;">
+    </div>
+    <div class="parallax"
+        style=" --bg: url('mountains.png'); --bganim: 'mountain'; position: fixed; top:150px; left: 0px; background-size: 100vw; z-index: -2; ">
+    </div>
+    <div class="parallax"
+        style="--bg: url('ground.png'); --bganim: 'ground'; position: fixed; top: 420px; left: 0px; background-size: 100vw 250px; z-index: -2;">
+    </div>
+
+    <div class="card-container">
+        <div style="position:relative; height: 1em; width: 1em; margin: auto;">
+            <a href="navigation.html"><img src="africa.png" class="africa" width="300"
+                    style=" left:-80px; top:590px; position:absolute;"></a>
+            <img class="pathanim" src="road.png" width="370" style="position: absolute; left: -150px; top: 150px;">
+            <p class="appear"
+                style="opacity:0;position: absolute; top:650px; left: -30px;height:fit-content; width: 150px; text-align: center;pointer-events: none;">
+                Сервалы живут здесь, в центральной части Африки!</p>
+            <p class="appear"
+                style="opacity:0;position: absolute; top:750px; left: -50px;height:fit-content; padding: 0px;">
+                    </p>
+            <img class="appearcat" src="point.png" width="300px"
+                style="opacity:0; position: absolute; top:700px; left: -250px;">
+        </div>
+        <img class="rotate" src="mountain.png" style=" position: absolute; top: 200px; left: 500px;" width="120px">
+        <img class="rotate" src="skull.png" style=" position: absolute; top: 378px; left: 530px ;" width="90px">
+        <img class="rotate" src="palms.png" style=" position: absolute; top: 470px ; right: 480px ;" width="100px">
+        <img src="map.png" width="600px" style="z-index: -1; position: relative; left:50px ;">
+    </div>
+    <div class="nav_wrap">
+        <div class="nav">
+            <a href="parallax.html" class="button">Главная</a>
+            <a href="navigation.html" class="button">Навигация</a>
+            <a href="map.html" class="button">Карта</a>
+            <a href="404.html" class="button">Помощь</a>
+        </div>
+    </div>
+</body>
+<footer><a href="navigation.html"><img src="serval.gif" width="150px"
+            style="position: relative; bottom: 100px; float: right;"></a></footer>
+
+</html>
